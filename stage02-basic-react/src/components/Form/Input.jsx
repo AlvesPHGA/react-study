@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Input = () => {
-   return <input type="text" name="name" id="name" />;
+const Input = ({ type, name }) => {
+   return <input type={type} name={name} id={name} />;
 };
 
 export default Input;

@@ -9,13 +9,13 @@ const Form = () => {
          Form
          <label htmlFor="name">
             <legend>Nome</legend>
-            <Input />
+            <Input type="text" name="name" id="name" />
          </label>
          <label htmlFor="city">
             <legend>Cidade</legend>
             <Select />
          </label>
-         <Button />
+         <Button legendBtn="Enviar" />
       </>
    );
 };
