@@ -1,16 +1,12 @@
 import React from 'react';
-import Button from './components/Button';
-import Modal from './components/Modal';
-import UseState from './components/UseState';
+import ExeUseState from './Exercises/ExeUseState';
 
 function App() {
-   let list = ['Pera', 'Limão', 'Morango'];
-
-   const [items, setItems] = React.useState(list);
-
+   const [data, setData] = React.useState(null);
+   const [loading, setLoading] = React.useState(null);
    return (
       <>
-         <UseState items={items} setItems={setItems} />
+         <ExeUseState data={data} setData={setData} loading={loading} />
       </>
    );
 }

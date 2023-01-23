@@ -1,8 +1,18 @@
 import React from 'react';
 
-const Button = ({ legendBtn, items, setItems }) => {
-   function handleClick() {
-      setItems([...items, 'Cenoura']);
+const Button = ({ legendBtn, data, setData }) => {
+   async function fetchProduct(legend) {
+      const res = await fetch(
+         `https://ranekapi.origamid.dev/json/api/produto/${legend}`,
+      );
+      const data = await res.json();
+      console.log(data);
+   }
+
+   function handleClick(ev) {
+      const legend = ev.target.innerHTML;
+      data = fetchProduct(legend);
+      console.log(data);
    }
    return (
       <button
