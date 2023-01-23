@@ -1,14 +1,16 @@
 import React from 'react';
 import Button from './components/Button';
 import Modal from './components/Modal';
+import UseState from './components/UseState';
 
 function App() {
-   const [modal, setModal] = React.useState(false);
+   let list = ['Pera', 'Limão', 'Morango'];
+
+   const [items, setItems] = React.useState(list);
 
    return (
       <>
-         <Modal modal={modal} setModal={setModal} />
-         <Button legendBtn="Clink me" setModal={setModal} />
+         <UseState items={items} setItems={setItems} />
       </>
    );
 }
