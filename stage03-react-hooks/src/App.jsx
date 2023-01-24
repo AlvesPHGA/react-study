@@ -1,12 +1,18 @@
 import React from 'react';
+import UseEffect from './components/UseEffect';
 import ExeUseState from './Exercises/ExeUseState';
 
 function App() {
    const [data, setData] = React.useState(null);
-   const [loading, setLoading] = React.useState(null);
+   const [count, setCount] = React.useState(0);
    return (
       <>
-         <ExeUseState data={data} setData={setData} loading={loading} />
+         <UseEffect
+            data={data}
+            setData={setData}
+            count={count}
+            setCount={setCount}
+         />
       </>
    );
 }
