@@ -1,5 +1,4 @@
 import React from 'react';
-import Example from './Page/Example';
 import Products from './Pages/Products';
 import './style/App.css';
 
