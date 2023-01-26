@@ -1,6 +1,10 @@
 import React from 'react';
+import Modal from '../components/Modal';
 
 const Products = ({ dataApi, setDataApi }) => {
+   const [modal, setModal] = React.useState(false);
+   const [elementApi, setElementApi] = React.useState('');
+
    React.useEffect(() => {
       fetch('https://api.punkapi.com/v2/beers')
          .then((res) => res.json())
@@ -8,7 +12,9 @@ const Products = ({ dataApi, setDataApi }) => {
    }, []);
 
    function handleModal({ target }) {
-      console.log(target.dataset.product);
+      const element = target.dataset.product;
+      setModal(true);
+      setElementApi(element);
    }
 
    const SECTION = {
@@ -69,6 +75,13 @@ const Products = ({ dataApi, setDataApi }) => {
                </div>
             ))}
          </section>
+
+         <Modal
+            dataApi={dataApi}
+            elementApi={elementApi}
+            modal={modal}
+            setModal={() => setModal(!modal)}
+         />
       </>
    );
 };
