@@ -1,16 +1,18 @@
 import React from 'react';
-import { GlobalStorage } from './components/GlobalContext';
+import Button from './components/Button';
 import UseEffect from './components/UseEffect';
 import ExeUseEffect from './Exercises/ExeUseEffect';
 import ExeUseState from './Exercises/ExeUseState';
-import Example from './Pages/Example';
+import { GlobalProduct } from './Exercises/GlobalContext';
+import ExGlobalContext from './Pages/ExGlobalContext';
 
 function App() {
    return (
       <>
-         <GlobalStorage>
-            <Example />
-         </GlobalStorage>
+         <GlobalProduct>
+            <ExGlobalContext />
+            <Button />
+         </GlobalProduct>
       </>
    );
 }
