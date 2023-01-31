@@ -1,12 +1,18 @@
 import React from 'react';
+import Checkbox from './components/Form/Checkbox';
 import Form from './components/Form/Form';
 
 function App() {
    const [form, setForm] = React.useState('');
+   const [therms, setTherms] = React.useState(false);
+   const [colors, setColors] = React.useState([]);
 
    return (
       <>
-         <Form form={form} setForm={setForm} />
+         <form>
+            <Checkbox colors={colors} setColors={setColors} />
+         </form>
+         {therms}
       </>
    );
 }
