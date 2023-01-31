@@ -1,18 +1,28 @@
 import React from 'react';
 import Checkbox from './components/Form/Checkbox';
 import Form from './components/Form/Form';
+import Form02 from './components/Form_02/Form02';
 
 function App() {
-   const [form, setForm] = React.useState('');
-   const [therms, setTherms] = React.useState(false);
-   const [colors, setColors] = React.useState([]);
-
+   const [name, setName] = React.useState('');
+   const [email, setEmail] = React.useState('');
+   const [city, setCity] = React.useState('');
+   const [sexy, setSexy] = React.useState('');
+   const [fruit, setFruit] = React.useState([]);
    return (
       <>
-         <form>
-            <Checkbox colors={colors} setColors={setColors} />
-         </form>
-         {therms}
+         <Form02
+            name={name}
+            setName={setName}
+            email={email}
+            setEmail={setEmail}
+            city={city}
+            setCity={setCity}
+            sexy={sexy}
+            setSexy={setSexy}
+            fruit={fruit}
+            setFruit={setFruit}
+         />
       </>
    );
 }
