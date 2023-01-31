@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+const ButtonStyled = styled.button`
    width: fit-content;
    height: fit-content;
    padding: 4px 10px;
@@ -8,3 +8,13 @@ export const Button = styled.button`
    border: 2px solid violet;
    border-radius: 4px;
 `;
+
+const Button = () => {
+   return (
+      <>
+         <ButtonStyled>Enviar</ButtonStyled>
+      </>
+   );
+};
+
+export default Button;

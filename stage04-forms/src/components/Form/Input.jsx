@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Input = styled.input`
+export const InputStyled = styled.input`
    width: 200px;
    height: fit-content;
    border: 1px solid blueviolet;
