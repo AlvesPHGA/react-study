@@ -16,55 +16,17 @@ const FormStyle = styled.form`
    gap: 10px;
 `;
 
-const Form02 = ({
-   name,
-   setName,
-   email,
-   setEmail,
-   city,
-   setCity,
-   sexy,
-   setSexy,
-   fruit,
-   setFruit,
-}) => {
+const Form02 = ({ cep, setCep }) => {
    return (
       <>
          <FormStyle>
             <Input
-               legend="Nome"
-               id="name"
+               legend="Cep"
+               id="cep"
                type="text"
-               placeholder="Nome"
-               value={name}
-               setValue={setName}
-            />
-
-            <Input
-               legend="Email"
-               id="email"
-               type="text"
-               placeholder="example@email.com"
-               value={email}
-               setValue={setEmail}
-            />
-
-            <Select
-               options={['São Paulo', 'Minas Gerais', 'Rio de Janeiro']}
-               value={city}
-               setValue={setCity}
-            />
-
-            <Radio
-               options={['Feminino', 'Masculino', 'Outro', 'Prefiro não dizer']}
-               value={sexy}
-               setValue={setSexy}
-            />
-
-            <Checkbox
-               options={['uva', 'pera', 'acerola', 'limão']}
-               value={fruit}
-               setValue={setFruit}
+               placeholder="00000-000"
+               value={cep}
+               setValue={setCep}
             />
          </FormStyle>
       </>

@@ -16,7 +16,31 @@ const InputFieldStyled = styled.label`
 `;
 
 const Input = ({ legend, id, type, placeholder, value, setValue }) => {
+   const [error, setError] = React.useState(null);
+
+   function validCep(value) {
+      const regex = /^\d{5}-?\d{3}$/;
+      const cep = regex.test(value);
+
+      if (value.length === 0) {
+         setError('Preencher o campo');
+         return false;
+      } else if (!cep) {
+         setError('Cep invalido');
+         return false;
+      } else {
+         setError(null);
+         return true;
+      }
+   }
+
+   function handleBlur({ target }) {
+      console.log(validCep(target.value));
+   }
+
    function handleChange({ target }) {
+      if (error) validCep(target.value);
+
       setValue(target.value);
    }
    return (
@@ -28,9 +52,11 @@ const Input = ({ legend, id, type, placeholder, value, setValue }) => {
                name={id}
                type={type}
                placeholder={placeholder}
+               onBlur={handleBlur}
                onChange={handleChange}
             />
          </InputFieldStyled>
+         {error && <span>{error}</span>}
       </>
    );
 };

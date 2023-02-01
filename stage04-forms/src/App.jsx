@@ -4,25 +4,14 @@ import Form from './components/Form/Form';
 import Form02 from './components/Form_02/Form02';
 
 function App() {
-   const [name, setName] = React.useState('');
-   const [email, setEmail] = React.useState('');
+   const [cep, setCep] = React.useState('');
+
    const [city, setCity] = React.useState('');
    const [sexy, setSexy] = React.useState('');
    const [fruit, setFruit] = React.useState([]);
    return (
       <>
-         <Form02
-            name={name}
-            setName={setName}
-            email={email}
-            setEmail={setEmail}
-            city={city}
-            setCity={setCity}
-            sexy={sexy}
-            setSexy={setSexy}
-            fruit={fruit}
-            setFruit={setFruit}
-         />
+         <Form02 cep={cep} setCep={setCep} />
       </>
    );
 }
