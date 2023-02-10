@@ -1,5 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, Route, Routes, useParams } from 'react-router-dom';
+import DescriptionProduct from './DescriptionProduct';
+import ModelsProduct from './ModelsProduct';
 
 const Products = () => {
    const params = useParams();
@@ -13,6 +15,18 @@ const Products = () => {
          >
             {params.id}
          </p>
+
+         <nav>
+            <NavLink to="" end>
+               Descrição
+            </NavLink>
+            <NavLink to="modelsproduct">Modelos</NavLink>
+         </nav>
+
+         <Routes>
+            <Route path="" element={<DescriptionProduct />} />
+            <Route path="modelsproduct" element={<ModelsProduct />} />
+         </Routes>
       </div>
    );
 };
